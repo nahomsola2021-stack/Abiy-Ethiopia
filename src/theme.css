@@ -1,0 +1,25 @@
+/* Import once in index.css / main.tsx. Goudy Serial is not on Google Fonts:
+   self-host it via @font-face if you own the licence; Goudy Bookletter 1911 is the fallback. */
+@import url('https://fonts.googleapis.com/css2?family=Goudy+Bookletter+1911&family=Figtree:wght@400;500;600&display=swap');
+
+:root {
+  --terracotta: #DB6148;
+  --terracotta-deep: #A94332;
+  --espresso: #241613;
+  --brown: #33201A;
+  --cream: #F7EBDD;
+  --sand: #EBD6BC;
+  --beige: #D8BFA4;
+  --gold: #D9A441;
+  --gold-hi: #E8BD5A;
+  --paper: #FFF9F2;
+}
+
+.font-display { font-family: 'Goudy Serial','Goudy Bookletter 1911','Goudy Old Style',Georgia,serif; font-weight: 400; }
+.font-body    { font-family: 'Figtree', system-ui, sans-serif; }
+
+:focus-visible { outline: 2px solid var(--gold-hi); outline-offset: 3px; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}

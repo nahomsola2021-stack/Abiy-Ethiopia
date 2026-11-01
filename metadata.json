@@ -1,0 +1,6 @@
+{
+  "name": "Abiy Ethiopia Tours",
+  "description": "Discover the Preserved Secret. Premium bespoke tours, historic expeditions, cultural journeys, and adventure across Ethiopia with local expert guides.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
