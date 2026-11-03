@@ -532,7 +532,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, onOpenPlanModal }) => {
       {/* ---------- STATS (WITH SEO KEYWORDS) ---------- */}
       <section className="bg-[#241613] py-20 text-center">
         <div className="mx-auto mb-16 max-w-3xl px-6">
-          <h2 className="font-display text-4xl text-[#FFF9F2] md:text-5xl">Your Trusted <span className="text-[#E8BD5A] italic">Ethiopian Travel Agency</span></h2>
+          <h2 className="font-display text-4xl text-[#FFF9F2] md:text-5xl">Your Trusted <span className="text-[#E8BD5A] italic">Ethiopian Tour Operator</span></h2>
           <p className="mt-6 text-lg text-[#F7EBDD]/80 leading-relaxed font-light">
             As a leading expert in providing extraordinary <strong className="font-semibold text-white">trips to Ethiopia</strong>, we take pride in connecting you with the most <strong className="font-semibold text-white">beautiful place in Ethiopia</strong>, ensuring your adventure is both authentic and flawlessly executed.
           </p>

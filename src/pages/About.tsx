@@ -32,16 +32,16 @@ const EXPERTISE_TABS = [
     text: "We provide tailor-made tour packages that cater to your needs, interests, and budget. Whether you seek luxury or cheap package holidays, our team has a passion for showcasing the beauty and culture of Ethiopia." 
   },
   { 
+    id: 'budget',
+    title: 'Accessible Excellence',
+    icon: ShieldCheck,
+    text: "As a leading Ethiopian tour operator, we stand out from the crowd by setting competitive prices without ever compromising our exceptional service for your trips to Ethiopia."
+  },
+  {
     id: 'car-rental', 
     title: 'Car Rental Services', 
     icon: Car, 
     text: "In addition to our guided tours, we provide top-tier car rental services. Travel Ethiopia across its diverse landscapes safely and comfortably in our well-maintained fleet of vehicles." 
-  },
-  { 
-    id: 'budget', 
-    title: 'Accessible Excellence', 
-    icon: ShieldCheck, 
-    text: "As a leading Ethiopian travel agency, we stand out from the crowd by setting competitive prices without ever compromising our exceptional service for your trips to Ethiopia." 
   }
 ];
 
@@ -99,13 +99,14 @@ export const About: React.FC<AboutProps> = ({ onNavigate, onOpenPlanModal }) => 
               <span className="w-12 h-[1px] bg-[#E8BD5A]"></span>
             </div>
 
-            <h1 className="text-5xl sm:text-7xl md:text-[6.5rem] lg:text-[7.5rem] font-['Goudy_Serial',_'Goudy_Bookletter_1911',_serif] text-[#FFF9F2] tracking-tight leading-[0.95] drop-shadow-2xl mb-8">
-              Crafting the <br />
-              <span className="italic text-[#E8BD5A] font-light drop-shadow-lg">Ethiopian</span> Narrative.
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-['Goudy_Serial',_'Goudy_Bookletter_1911',_serif] text-[#FFF9F2] tracking-tight leading-[0.98] drop-shadow-2xl mb-8">
+              Discover Ethiopia <br />
+              <span className="italic text-[#E8BD5A] font-light drop-shadow-lg">Through the Eyes</span> <br />
+              of Those Who Call It Home
             </h1>
             
             <p className="text-lg md:text-xl text-[#F7EBDD]/80 max-w-2xl font-light leading-relaxed mb-12 drop-shadow-md">
-              For over a decade, we have been more than guides; we are storytellers, conservationists, and the bridge to Ethiopia's untouched wonders.
+              Locally rooted journeys through Ethiopia&apos;s extraordinary history, culture, and landscapes.
             </p>
 
           </motion.div>
@@ -126,14 +127,14 @@ export const About: React.FC<AboutProps> = ({ onNavigate, onOpenPlanModal }) => 
       <section id="our-story-section" className="py-24 md:py-32 px-6 max-w-[90rem] mx-auto relative z-30 bg-[#F7EBDD]">
         <motion.div 
           variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} 
-          className="grid lg:grid-cols-12 gap-16 lg:gap-24 items-center"
+          className="grid lg:grid-cols-12 gap-16 lg:gap-24 items-start"
         >
           <motion.div variants={fadeUp} className="lg:col-span-5 relative">
             <div className="absolute inset-0 border-2 border-[#D8BFA4] rounded-sm transform translate-x-6 translate-y-6 z-0" />
             <div className="relative z-10 overflow-hidden rounded-sm shadow-[0_20px_50px_rgba(36,22,19,.15)] bg-[#241613]">
               <img 
                 src="https://res.cloudinary.com/dw1ohipim/image/upload/v1789400586/k26ppfj629je6synlhxt.jpg" 
-                className="w-full aspect-[4/5] object-cover hover:scale-105 transition-transform duration-[2000ms] ease-out opacity-90" 
+                className="w-full aspect-[4/5] object-cover object-[center_65%] hover:scale-105 transition-transform duration-[2000ms] ease-out opacity-90"
                 alt="Ethiopian Landscape" 
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#241613]/80 to-transparent" />
@@ -174,20 +175,37 @@ export const About: React.FC<AboutProps> = ({ onNavigate, onOpenPlanModal }) => 
             
             <div className="space-y-6 text-lg text-[#5A3D34] font-light leading-relaxed mb-12">
               <p>
-                <strong>Established in 2015, Abiy Ethiopia Tours was born from a deep passion to help people <span className="font-semibold text-[#241613]">travel Ethiopia</span> and a desire to share its beauty, history, and culture with travelers from around the world.</strong>
+                Established in 2015, <strong>Abiy Ethiopia Tours</strong> was founded on a deep passion for travel and a genuine desire to share the extraordinary beauty, history, culture, and traditions of Ethiopia with travelers from around the world.
               </p>
               <p>
-                The company was founded by <strong>Abiy Sitotie</strong>, who was born and raised in the historic town of <strong>Lalibela</strong>, one of Ethiopia’s most remarkable cultural and spiritual destinations. Growing up surrounded by Ethiopia’s rich history, traditions, and welcoming communities, Abiy developed a lifelong passion for his homeland and a strong desire to introduce its authentic beauty to visitors.
+                The company was founded by <strong>Abiy Sitotie</strong>, who was born and raised in the historic town of Lalibela, home to Ethiopia&apos;s remarkable rock-hewn churches and one of Africa&apos;s most treasured cultural heritage sites. Growing up surrounded by the country&apos;s rich history, ancient traditions, breathtaking landscapes, and warm hospitality, Abiy developed a lifelong love for his homeland and a passion for introducing its authentic beauty to visitors.
               </p>
               <p>
-                Over the years, that passion has grown into a dedicated team of <strong>passionate, professional, and knowledgeable travel experts</strong> who share the same vision. Together, we strive to create meaningful and memorable experiences that go beyond simply visiting destinations—we want our guests to connect with the people, culture, history, and spirit of Ethiopia.
+                What began as a personal dream has grown into a dedicated team of passionate, professional, and knowledgeable travel experts who share the same vision: to make every journey through Ethiopia meaningful, authentic, and unforgettable.
               </p>
               <p>
-                We understand that there are many tour operators in Ethiopia, but we believe what sets us apart is our <strong>personal approach, local knowledge, genuine passion, and commitment to excellence</strong>. We provide <strong>tailor-made tour packages</strong> designed around your specific needs, interests, and budget, ensuring that every journey is carefully planned and truly unique.
+                At Abiy Ethiopia Tours, we believe that traveling is about more than visiting famous landmarks. It is about discovering new cultures, meeting local communities, experiencing different ways of life, and creating memories that last a lifetime. We want every guest to experience not only the beauty of Ethiopia but also its people, traditions, history, and welcoming spirit.
               </p>
               <p>
-                From Ethiopia’s ancient history and fascinating cultures to its breathtaking landscapes and hidden treasures, our goal is to help you discover the country through the eyes of people who know and love it.
+                We understand that every traveler is different. That is why we specialize in <strong>tailor-made tours designed around your interests, travel style, schedule, and budget.</strong> Whether you are interested in Ethiopia&apos;s ancient civilizations, fascinating cultural traditions, spectacular landscapes, wildlife, historical attractions, or off-the-beaten-path adventures, we carefully plan every detail to make your experience special.
               </p>
+              <p>
+                What makes us different is our personal approach, strong local knowledge, genuine passion for our country, and commitment to providing professional and reliable service. As a locally founded Ethiopian tour operator, we take pride in sharing authentic experiences and helping our guests discover places and stories that go beyond the ordinary tourist experience.
+              </p>
+              <p>
+                From the magnificent rock-hewn churches of Lalibela and the historic castles of Gondar to the dramatic landscapes of the Simien Mountains, the cultural richness of the Omo Valley, and the hidden treasures of Ethiopia, we invite you to explore this extraordinary country with us.
+              </p>
+            </div>
+
+            <blockquote className="mb-10 border-y border-[#EBD6BC] py-8 font-['Goudy_Serial',_'Goudy_Bookletter_1911',_serif] text-2xl md:text-3xl leading-relaxed text-[#241613]">
+              <strong>Our mission is simple: to share the real Ethiopia with the world, one unforgettable journey at a time.</strong>
+            </blockquote>
+
+            <div className="space-y-5 text-lg text-[#5A3D34] font-light leading-relaxed mb-12">
+              <p>
+                With Abiy Ethiopia Tours, you are not just visiting Ethiopia. You are discovering it with people who know it, love it, and are proud to call it home.
+              </p>
+              <p><strong>Welcome to Ethiopia. Welcome to our home!</strong></p>
             </div>
 
             <div className="pt-8 border-t border-[#EBD6BC] flex items-center gap-6">
@@ -301,7 +319,7 @@ export const About: React.FC<AboutProps> = ({ onNavigate, onOpenPlanModal }) => 
               </div>
               <h2 className="text-4xl md:text-6xl font-['Goudy_Serial',_'Goudy_Bookletter_1911',_serif] text-[#FFF9F2] mb-8 leading-tight tracking-tight">
                 Years of Excellence as an <br />
-                <span className="italic text-[#E8BD5A] font-light">Ethiopian Travel Agency</span>
+                <span className="italic text-[#E8BD5A] font-light">Ethiopian Tour Operator</span>
               </h2>
               
               <div className="space-y-6 mb-12">
@@ -350,20 +368,20 @@ export const About: React.FC<AboutProps> = ({ onNavigate, onOpenPlanModal }) => 
       </section>
 
       {/* --- VIBRANT GRAND FINALE CTA SECTION --- */}
-      <section className="relative overflow-hidden bg-[#94220a] py-32 md:py-44 border-t border-[#7a1b07]">
+      <section className="relative overflow-hidden bg-[#94220a] py-16 md:py-24 border-t border-[#7a1b07]">
         <div aria-hidden="true" className="pointer-events-none absolute inset-0" style={{ backgroundImage: ['radial-gradient(ellipse at 15% 20%, rgba(232,189,90,0.18), transparent 38%)', 'radial-gradient(ellipse at 85% 80%, rgba(36,22,19,0.5), transparent 42%)', 'radial-gradient(#FFF9F2 1px, transparent 1px)', 'linear-gradient(135deg, #94220a, #7a1b07 55%, #241613)'].join(', '), backgroundSize: 'auto, auto, 32px 32px, auto' }} />
 
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
-          <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="bg-[#241613]/50 p-12 md:p-20 rounded-sm border border-[#E8BD5A]/20 shadow-[0_30px_60px_rgba(36,22,19,0.4)]">
-            <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-[#E8BD5A] mb-8 shadow-[0_0_40px_rgba(232,189,90,0.4)]">
+          <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="bg-[#241613]/50 p-8 md:p-12 rounded-sm border border-[#E8BD5A]/20 shadow-[0_30px_60px_rgba(36,22,19,0.4)]">
+            <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-[#E8BD5A] mb-5 shadow-[0_0_40px_rgba(232,189,90,0.4)]">
             </div>
             
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-['Goudy_Serial',_'Goudy_Bookletter_1911',_serif] text-[#FFF9F2] mb-6 leading-tight tracking-tight drop-shadow-lg">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-['Goudy_Serial',_'Goudy_Bookletter_1911',_serif] text-[#FFF9F2] mb-4 leading-tight tracking-tight drop-shadow-lg">
               Ready to Write Your <br className="hidden md:block"/> 
               <span className="text-[#E8BD5A] italic font-light">Ethiopian Chapter?</span>
             </h2>
             
-            <p className="text-lg md:text-xl text-[#F7EBDD]/80 max-w-2xl mx-auto mb-10 leading-relaxed font-light">
+            <p className="text-base md:text-lg text-[#F7EBDD]/80 max-w-2xl mx-auto mb-7 leading-relaxed font-light">
               Let our experts craft a tailor-made package that caters perfectly to your needs, interests, and budget for your trips to Ethiopia.
             </p>
             

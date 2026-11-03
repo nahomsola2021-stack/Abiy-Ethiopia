@@ -15,9 +15,9 @@ const TOUR_CATEGORIES = [
   'Historical Discoveries',
   'Nature and Adventure',
   'Wildlife Safaris',
+  'Day Trips',
   'Birding Tours',
-  'Specialty Coffee Tours',
-  'Day Trips'
+  'Specialty Coffee Tours'
 ];
 
 const ALL_MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -381,7 +381,7 @@ export const Tours: React.FC<ToursProps> = ({ onNavigate, onOpenPlanModal, initi
       </section>
 
       {/* ---------- CLOSING CTA (WITH SEO KEYWORDS) ---------- */}
-      <section className="relative overflow-hidden bg-[#94220a] py-32 md:py-44">
+      <section className="relative overflow-hidden bg-[#94220a] py-20 md:py-28">
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0"
@@ -398,16 +398,16 @@ export const Tours: React.FC<ToursProps> = ({ onNavigate, onOpenPlanModal, initi
 
         <motion.div initial={{ opacity: 0, y: 28 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.9 }}
           className="mx-auto max-w-4xl px-6 text-center relative z-10">
-          <span className="font-['Montserrat',_sans-serif] text-[10px] tracking-[0.25em] text-[#E8BD5A] uppercase font-bold block mb-6 drop-shadow-md">
+          <span className="font-['Montserrat',_sans-serif] text-[10px] tracking-[0.25em] text-[#E8BD5A] uppercase font-bold block mb-4 drop-shadow-md">
             Tailor-Made Excellence
           </span>
-          <h2 className="font-display text-5xl leading-[0.98] text-[#FFF9F2] drop-shadow-xl md:text-7xl lg:text-8xl">
+          <h2 className="font-display text-4xl leading-[0.98] text-[#FFF9F2] drop-shadow-xl md:text-6xl lg:text-7xl">
             Want to see specific <span className="italic text-[#E8BD5A]">Ethiopia tourist attractions</span>?
           </h2>
-          <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-[#FFF9F2] drop-shadow-md font-light">
+          <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-[#FFF9F2] drop-shadow-md font-light md:text-lg">
             If a standard brochure isn't enough, we adjust days, pacing, lodges and routes so you can explore the <strong className="font-medium text-white">places to visit in Ethiopia</strong> exactly how you want. Perfect for solo travelers, couples, families, and private groups.
           </p>
-          <div className="mt-14">
+          <div className="mt-9">
             <PremiumButton
               className="shadow-[0_0_40px_rgba(217,164,65,0.25)] transition-shadow duration-500 hover:shadow-[0_0_60px_rgba(217,164,65,0.45)] ring-1 ring-white/10"
               onClick={() => onOpenPlanModal()}

@@ -116,28 +116,21 @@ const FacebookIcon: React.FC<{ className?: string }> = ({ className = 'h-8 w-8' 
 export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenPlanModal }) => {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
-  // Ensure Omo Valley is always included in the footer Destinations list
+  // Keep Omo Valley and the Danakil Depression visible in the footer destinations.
   const footerDestinations = useMemo(() => {
     const initialList = DESTINATIONS.slice(0, 5);
-    const hasOmoValley = initialList.some(
-      (d) => d.name.toLowerCase().includes('omo valley') || d.slug.toLowerCase().includes('omo')
-    );
+    const pinnedDestinations = [
+      DESTINATIONS.find((d) => d.name.toLowerCase().includes('omo valley') || d.slug.toLowerCase().includes('omo')) ?? {
+        id: 'omo-valley',
+        name: 'Omo Valley',
+        slug: 'omo-valley',
+      },
+      DESTINATIONS.find((d) => d.slug === 'danakil-depression'),
+    ].filter((destination): destination is NonNullable<typeof destination> => Boolean(destination));
 
-    if (hasOmoValley) {
-      return initialList;
-    }
-
-    const omoFromData = DESTINATIONS.find(
-      (d) => d.name.toLowerCase().includes('omo valley') || d.slug.toLowerCase().includes('omo')
-    );
-
-    const omoEntry = omoFromData ?? {
-      id: 'omo-valley',
-      name: 'Omo Valley',
-      slug: 'omo-valley',
-    };
-
-    return [...initialList, omoEntry];
+    return [...initialList, ...pinnedDestinations.filter(
+      (destination) => !initialList.some((item) => item.slug === destination.slug)
+    )];
   }, []);
 
   return (

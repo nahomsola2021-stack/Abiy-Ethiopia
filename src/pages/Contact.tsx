@@ -106,7 +106,7 @@ const GoogleGIcon: React.FC<{ className?: string }> = ({ className = 'h-16 w-16'
   </svg>
 );
 
-const SOCIAL_LINKS = [
+const SOCIAL_MEDIA_LINKS = [
   {
     id: 'whatsapp',
     url: WHATSAPP_URL,
@@ -133,7 +133,10 @@ const SOCIAL_LINKS = [
     desc: 'Community',
     bgClass: 'bg-gradient-to-br from-[#2B84FF] via-[#1877F2] to-[#0D5BD9]',
     textColor: 'text-white'
-  },
+  }
+];
+
+const REVIEW_LINKS = [
   {
     id: 'tripadvisor',
     url: TRIPADVISOR_URL,
@@ -164,9 +167,9 @@ const SOCIAL_LINKS = [
 ];
 
 const FAQS = [
-  { q: "How far in advance should I book my expedition?", a: "For peak seasons (September to April) and specific festivals like Timkat, we recommend booking at least 3 to 6 months in advance. For standard private tours, 1 to 2 months is generally sufficient to secure the best lodges and domestic flights." },
+  { q: "How far in advance should I book my expedition?", a: "For peak seasons (September to April) and major festivals like Timkat, we recommend booking 3 to 6 months in advance to secure your preferred accommodation and flights. For standard private tours, 1 to 2 months is generally sufficient. However, we also welcome last-minute and short-notice bookings, subject to availability. We will always do our best to accommodate your travel plans." },
   { q: "Are international flights included in the packages?", a: "No, our packages cover your experience from the moment you land in Addis Ababa. We handle all domestic flights, 4WD transport, accommodation, and guiding. You are responsible for booking your international arrival and departure flights." },
-  { q: "Is Ethiopia safe for travel?", a: "Yes. We strictly operate in regions that are entirely safe and secure for international travelers. As a leading Ethiopian travel agency, our local expertise and continuous monitoring of regional situations ensure your safety is never compromised." },
+  { q: "Is Ethiopia safe for travel?", a: "Yes. We strictly operate in regions that are entirely safe and secure for international travelers. As a leading Ethiopian tour operator, our local expertise and continuous monitoring of regional situations ensure your safety is never compromised." },
   { q: "Do you accommodate dietary restrictions?", a: "Absolutely. Whether you require vegan, gluten-free, or specific allergy-related meals, our team and partner lodges are well-equipped to cater to your dietary needs throughout the journey." }
 ];
 
@@ -247,7 +250,7 @@ export const Contact: React.FC<ContactProps> = ({ onNavigate }) => {
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.9, delay: 0.15 }} className="lg:col-span-7">
             <h2 className="font-display text-4xl leading-[1.05] md:text-6xl">Immersive, authentic travel</h2>
             <div className="mt-8 max-w-2xl space-y-5 text-lg leading-relaxed text-[#33201A]">
-              <p>As a boutique <strong className="font-semibold">Ethiopian travel agency</strong>, we specialize in immersive, authentic, and high-quality expeditions. Built on deep local knowledge and meaningful human connections, we love sharing Ethiopia’s cultural richness with the world.</p>
+              <p>As a boutique <strong className="font-semibold">Ethiopian tour operator</strong>, we specialize in immersive, authentic, and high-quality expeditions. Built on deep local knowledge and meaningful human connections, we love sharing Ethiopia’s cultural richness with the world.</p>
               <p>Whether you're after luxury escapes, rugged <strong className="font-semibold">African safari tours</strong>, or historical pilgrimages, we design tailor-made journeys that reflect your specific interests, pace, and expectations.</p>
             </div>
             <dl className="mt-10 grid grid-cols-3 border-y border-[#D8BFA4] py-8">
@@ -265,38 +268,76 @@ export const Contact: React.FC<ContactProps> = ({ onNavigate }) => {
       {/* ---------- SOCIAL MEDIA & REVIEWS SECTION ---------- */}
       <section className="bg-[#EBD6BC] py-20 px-6 border-y border-[#D8BFA4]">
         <div className="mx-auto max-w-[90rem]">
-          <div className="text-center max-w-3xl mx-auto mb-14">
-            <span className="font-['Montserrat',_sans-serif] text-xs font-bold uppercase tracking-[0.25em] text-[#A94332] block mb-3">
-              Connect & Explore
-            </span>
-            <h2 className="font-display text-4xl md:text-6xl text-[#241613]">
-              Social Media & Reviews
-            </h2>
-            <p className="mt-4 text-lg text-[#5A3D34] font-light">
-              Follow our latest expedition stories or read verified traveler experiences across leading platforms.
-            </p>
+          <div>
+            <div className="text-center max-w-3xl mx-auto mb-10">
+              <span className="font-['Montserrat',_sans-serif] text-xs font-bold uppercase tracking-[0.25em] text-[#A94332] block mb-3">
+                Stay connected
+              </span>
+              <h2 className="font-display text-4xl md:text-5xl text-[#241613]">
+                Follow Us
+              </h2>
+              <p className="mt-4 text-lg text-[#5A3D34] font-light">
+                Follow our latest expedition stories and connect with us on social media.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto justify-items-center">
+              {SOCIAL_MEDIA_LINKS.map((social) => (
+                <a
+                  key={social.id}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative flex flex-col items-center justify-center rounded-3xl border-2 border-[#D8BFA4] bg-[#FFF9F2] p-8 text-center shadow-[0_8px_24px_rgba(36,22,19,0.08)] transition-all duration-300 hover:-translate-y-2 hover:border-[#DB6148] hover:shadow-[0_20px_40px_rgba(36,22,19,0.18)] w-full max-w-sm"
+                >
+                  <span className={`flex h-24 w-24 items-center justify-center rounded-3xl shadow-lg border-2 border-white/70 transition-transform duration-300 group-hover:scale-110 mb-5 ${social.bgClass} ${social.textColor}`}>
+                    <social.Icon className="h-12 w-12 drop-shadow-md" />
+                  </span>
+                  <h3 className="font-display text-3xl font-bold text-[#241613] transition-colors group-hover:text-[#A94332] leading-tight">
+                    {social.title}
+                  </h3>
+                  <p className="text-sm text-[#5A3D34] mt-2 font-medium">
+                    {social.desc}
+                  </p>
+                </a>
+              ))}
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto justify-items-center">
-            {SOCIAL_LINKS.map((social) => (
-              <a
-                key={social.id}
-                href={social.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group relative flex flex-col items-center justify-center rounded-3xl border-2 border-[#D8BFA4] bg-[#FFF9F2] p-8 text-center shadow-[0_8px_24px_rgba(36,22,19,0.08)] transition-all duration-300 hover:-translate-y-2 hover:border-[#DB6148] hover:shadow-[0_20px_40px_rgba(36,22,19,0.18)] w-full max-w-sm"
-              >
-                <span className={`flex h-24 w-24 items-center justify-center rounded-3xl shadow-lg border-2 border-white/70 transition-transform duration-300 group-hover:scale-110 mb-5 ${social.bgClass} ${social.textColor}`}>
-                  <social.Icon className="h-12 w-12 drop-shadow-md" />
-                </span>
-                <h3 className="font-display text-3xl font-bold text-[#241613] transition-colors group-hover:text-[#A94332] leading-tight">
-                  {social.title}
-                </h3>
-                <p className="text-sm text-[#5A3D34] mt-2 font-medium">
-                  {social.desc}
-                </p>
-              </a>
-            ))}
+          <div className="mt-16 border-t border-[#D8BFA4] pt-16">
+            <div className="text-center max-w-3xl mx-auto mb-10">
+              <span className="font-['Montserrat',_sans-serif] text-xs font-bold uppercase tracking-[0.25em] text-[#A94332] block mb-3">
+                Traveler experiences
+              </span>
+              <h2 className="font-display text-4xl md:text-5xl text-[#241613]">
+                Read Our Reviews
+              </h2>
+              <p className="mt-4 text-lg text-[#5A3D34] font-light">
+                Explore traveler ratings and reviews on trusted platforms.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto justify-items-center">
+              {REVIEW_LINKS.map((social) => (
+                <a
+                  key={social.id}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative flex flex-col items-center justify-center rounded-3xl border-2 border-[#D8BFA4] bg-[#FFF9F2] p-8 text-center shadow-[0_8px_24px_rgba(36,22,19,0.08)] transition-all duration-300 hover:-translate-y-2 hover:border-[#DB6148] hover:shadow-[0_20px_40px_rgba(36,22,19,0.18)] w-full max-w-sm"
+                >
+                  <span className={`flex h-24 w-24 items-center justify-center rounded-3xl shadow-lg border-2 border-white/70 transition-transform duration-300 group-hover:scale-110 mb-5 ${social.bgClass} ${social.textColor}`}>
+                    <social.Icon className="h-12 w-12 drop-shadow-md" />
+                  </span>
+                  <h3 className="font-display text-3xl font-bold text-[#241613] transition-colors group-hover:text-[#A94332] leading-tight">
+                    {social.title}
+                  </h3>
+                  <p className="text-sm text-[#5A3D34] mt-2 font-medium">
+                    {social.desc}
+                  </p>
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       </section>

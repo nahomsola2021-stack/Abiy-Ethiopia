@@ -759,5 +759,46 @@ export const DESTINATIONS: Destination[] = [
     ],
     climateInfo: 'Warm, semi-arid plateau climate. Daytime temperatures hover between 25°C and 28°C with pleasant evenings.',
     recommendedTourSlugs: ['grand-ethiopia-circuit-14-days']
+  },
+  {
+    id: 'dest-danakil-depression',
+    slug: 'danakil-depression',
+    name: 'Danakil Depression',
+    tagline: 'Volcanic Landscapes, Salt Flats & Dallol',
+    region: 'Afar Region (Nature and Adventure)',
+    heroImage: 'https://res.cloudinary.com/dw1ohipim/image/upload/v1789400586/palpzv1cwzf74zsnuszl.jpg',
+    galleryImages: [
+      'https://res.cloudinary.com/dw1ohipim/image/upload/v1789400586/palpzv1cwzf74zsnuszl.jpg'
+    ],
+    shortDescription: 'Explore one of the world’s most remarkable landscapes, from Erta Ale’s volcanic terrain to Lake Assale’s salt flats and Dallol’s vivid geothermal formations.',
+    fullOverview: 'The Danakil Depression is a remote, dramatic region of northern Ethiopia known for volcanic landscapes, vast salt flats, and colorful geothermal formations. Guided journeys into the Afar region can include Erta Ale, Lake Assale, traditional salt-mining areas, and Dallol. Its extreme climate and remote setting make experienced local guides, careful planning, and suitable transport essential.',
+    whyVisit: [
+      'See the volcanic landscape around Erta Ale',
+      'Explore the salt flats of Lake Assale',
+      'Discover Dallol’s vivid geothermal formations',
+      'Learn about Afar culture and traditional salt mining'
+    ],
+    topAttractions: [
+      {
+        title: 'Erta Ale',
+        description: 'A remote shield volcano in the Afar region, surrounded by striking desert and volcanic terrain.'
+      },
+      {
+        title: 'Dallol',
+        description: 'A surreal geothermal area known for colorful mineral formations and salt pinnacles.'
+      },
+      {
+        title: 'Lake Assale Salt Flats',
+        description: 'Vast salt plains and a landscape shaped by traditional Afar salt-mining.'
+      }
+    ],
+    bestTimeToVisit: 'November to February, when temperatures are relatively cooler. Travel requires careful planning due to extreme heat and remote conditions.',
+    practicalTips: [
+      'Travel with an experienced local guide and follow all safety guidance for the region.',
+      'Prepare for extreme heat with sun protection, suitable clothing, and plenty of drinking water.',
+      'Expect long drives over remote terrain and basic facilities during the expedition.'
+    ],
+    climateInfo: 'Extremely hot and arid desert climate. Temperatures can be severe, especially during the hotter months.',
+    recommendedTourSlugs: ['3-day-danakil-depression', '5-day-danakil-lalibela']
   }
 ];
