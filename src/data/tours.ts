@@ -310,9 +310,9 @@ export const TOURS: Tour[] = [
     endLocation: 'Addis Ababa',
     transportation: 'Domestic Flights + Private Vehicle',
     bestMonths: 'September to May',
-    heroImage: 'https://res.cloudinary.com/dw1ohipim/image/upload/v1791473041/vw1ksxsq147g0s2hijwa.jpg',
+    heroImage: 'https://res.cloudinary.com/dw1ohipim/image/upload/v1793737023/kuwkhc9mbveadyngfmoc.jpg',
     galleryImages: [
-      'https://res.cloudinary.com/dw1ohipim/image/upload/v1789393450/jphkyw2m66wt8jbv8ame.jpg'
+      'https://res.cloudinary.com/dw1ohipim/image/upload/v1793737023/kuwkhc9mbveadyngfmoc.jpg'
     ],
     shortDescription: 'Explore the royal castles of Gondar, the rock-hewn churches of Lalibela, endemic wildlife in the Simien Mountains, and the diverse indigenous cultures of the Omo Valley.',
     overview: 'This comprehensive 12-day journey covers the best of Ethiopia. Start in the historic north, cruising Lake Tana, exploring the royal castles of Gondar, trekking with Gelada baboons in the Simien Mountains, and discovering the monolithic churches of Lalibela. Then, fly south to navigate the culturally rich Omo Valley, interacting authentically with the Karo, Hamer, Dassanech, and Mursi tribes before returning to the capital.',

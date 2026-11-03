@@ -372,8 +372,12 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, onOpenPlanModal }) => {
         "Flexible vehicle hire for business, leisure, and events",
         "Personalized transport for individuals, families, and groups"
       ],
-      images: ["/images/IMG_0288.JPG", "/images/IMG_0289.JPG",    "https://res.cloudinary.com/dw1ohipim/image/upload/v1793552222/kbweqt0ibh2xee6hd30q.png", 
-        "https://res.cloudinary.com/dw1ohipim/image/upload/v1793551516/geq9qrafnduumnayhcyz.jpg"  ],
+      images: [
+        "https://res.cloudinary.com/dw1ohipim/image/upload/v1791473041/vw1ksxsq147g0s2hijwa.jpg",
+        "https://res.cloudinary.com/dw1ohipim/image/upload/v1793735151/gouj0ehphykzpizxhvev.png",
+        "https://res.cloudinary.com/dw1ohipim/image/upload/v1793552222/kbweqt0ibh2xee6hd30q.png",
+        "https://res.cloudinary.com/dw1ohipim/image/upload/v1793734977/vblrvpjv55ajwu1g1cdf.png"
+      ],
     },
     {
       title: "Explore Ethiopia & Custom Travel", linkText: "Request Vehicle", badge: "Custom Tours",
@@ -385,9 +389,9 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, onOpenPlanModal }) => {
         "Vehicle options for couples, families, and larger groups"
       ],
       images: ["https://res.cloudinary.com/dw1ohipim/image/upload/v1793552222/kbweqt0ibh2xee6hd30q.png", 
-        "https://res.cloudinary.com/dw1ohipim/image/upload/v1793551516/geq9qrafnduumnayhcyz.jpg",
+        "https://res.cloudinary.com/dw1ohipim/image/upload/v1793734977/vblrvpjv55ajwu1g1cdf.png",
         "https://res.cloudinary.com/dw1ohipim/image/upload/v1793551515/afobk4lbfunuu20jejpw.jpg", 
-        "https://res.cloudinary.com/dw1ohipim/image/upload/v1793551516/r38yjq0b7z75ueaq0b0s.jpg"],
+        "https://res.cloudinary.com/dw1ohipim/image/upload/v1793734972/hrg10nhynzjp1ikud922.png"],
     }
   ];
 

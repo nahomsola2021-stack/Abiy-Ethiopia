@@ -382,7 +382,7 @@ export const DESTINATIONS: Destination[] = [
     name: 'Wenchi Crater Lake',
     tagline: 'Lush Caldera Lake, Mineral Streams & Verdant Valleys',
     region: 'Oromia Region (Nature and Adventure)',
-    heroImage: 'https://res.cloudinary.com/dw1ohipim/image/upload/v1791473038/cwnzpjbdar01axpwtpzq.jpg',
+    heroImage: 'https://res.cloudinary.com/dw1ohipim/image/upload/v1791473036/qtbejwojusj5qyhhnsmf.jpg',
     galleryImages: [
       'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80',
       'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&q=80'
