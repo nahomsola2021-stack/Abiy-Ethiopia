@@ -392,7 +392,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, onOpenPlanModal }) => {
         "Customized transport packages for multi-day trips",
         "Vehicle options for couples, families, and larger groups"
       ],
-      images: ["https://res.cloudinary.com/dw1ohipim/image/upload/v1793552222/kbweqt0ibh2xee6hd30q.png"],
+      images: ["https://res.cloudinary.com/dw1ohipim/image/upload/v1793735151/gouj0ehphykzpizxhvev.png"],
     }
   ];
 
