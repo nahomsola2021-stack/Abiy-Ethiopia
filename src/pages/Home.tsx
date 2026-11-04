@@ -264,28 +264,32 @@ const CarRentalStack = ({ c, onOpenPlanModal, reverse }: { c: any, onOpenPlanMod
         </ul>
 
         <div className={`flex flex-col sm:flex-row items-center gap-6 mt-4 w-full justify-center ${reverse ? 'lg:justify-end' : 'lg:justify-start'}`}>
-          <div className="flex gap-3">
-            <button onClick={handlePrev} className="flex h-14 w-14 cursor-pointer items-center justify-center rounded-full border-2 border-[#D8BFA4] transition-all duration-300 hover:bg-[#241613] hover:border-[#241613] hover:text-[#E8BD5A] text-[#241613] shadow-sm hover:-translate-y-1">
-              <ArrowUp size={24} strokeWidth={2.5} />
-            </button>
-            <button onClick={handleNext} className="flex h-14 w-14 cursor-pointer items-center justify-center rounded-full border-2 border-[#D8BFA4] transition-all duration-300 hover:bg-[#241613] hover:border-[#241613] hover:text-[#E8BD5A] text-[#241613] shadow-sm hover:translate-y-1">
-              <ArrowDown size={24} strokeWidth={2.5} />
-            </button>
-          </div>
+          {images.length > 1 && (
+            <div className="flex gap-3">
+              <button onClick={handlePrev} className="flex h-14 w-14 cursor-pointer items-center justify-center rounded-full border-2 border-[#D8BFA4] transition-all duration-300 hover:bg-[#241613] hover:border-[#241613] hover:text-[#E8BD5A] text-[#241613] shadow-sm hover:-translate-y-1">
+                <ArrowUp size={24} strokeWidth={2.5} />
+              </button>
+              <button onClick={handleNext} className="flex h-14 w-14 cursor-pointer items-center justify-center rounded-full border-2 border-[#D8BFA4] transition-all duration-300 hover:bg-[#241613] hover:border-[#241613] hover:text-[#E8BD5A] text-[#241613] shadow-sm hover:translate-y-1">
+                <ArrowDown size={24} strokeWidth={2.5} />
+              </button>
+            </div>
+          )}
           <PremiumButton variant="terracotta" onClick={() => onOpenPlanModal(c.title)} className="w-full sm:w-auto px-8 py-3.5 text-base">
             {c.linkText}
           </PremiumButton>
         </div>
         
-        <div className={`flex gap-2.5 mt-10 w-full justify-center ${reverse ? 'lg:justify-end' : 'lg:justify-start'}`}>
-          {images.map((_: any, idx: number) => (
-            <button
-              key={idx}
-              onClick={() => setCurrentIndex(idx)}
-              className={`h-2.5 w-2.5 rounded-full transition-colors duration-300 ${idx === currentIndex ? 'bg-[#A94332]' : 'bg-[#D8BFA4]'}`}
-            />
-          ))}
-        </div>
+        {images.length > 1 && (
+          <div className={`flex gap-2.5 mt-10 w-full justify-center ${reverse ? 'lg:justify-end' : 'lg:justify-start'}`}>
+            {images.map((_: any, idx: number) => (
+              <button
+                key={idx}
+                onClick={() => setCurrentIndex(idx)}
+                className={`h-2.5 w-2.5 rounded-full transition-colors duration-300 ${idx === currentIndex ? 'bg-[#A94332]' : 'bg-[#D8BFA4]'}`}
+              />
+            ))}
+          </div>
+        )}
       </div>
     </motion.div>
   );
@@ -388,10 +392,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, onOpenPlanModal }) => {
         "Customized transport packages for multi-day trips",
         "Vehicle options for couples, families, and larger groups"
       ],
-      images: ["https://res.cloudinary.com/dw1ohipim/image/upload/v1793552222/kbweqt0ibh2xee6hd30q.png", 
-        "https://res.cloudinary.com/dw1ohipim/image/upload/v1793734977/vblrvpjv55ajwu1g1cdf.png",
-        "https://res.cloudinary.com/dw1ohipim/image/upload/v1793551515/afobk4lbfunuu20jejpw.jpg", 
-        "https://res.cloudinary.com/dw1ohipim/image/upload/v1793734972/hrg10nhynzjp1ikud922.png"],
+      images: ["https://res.cloudinary.com/dw1ohipim/image/upload/v1793552222/kbweqt0ibh2xee6hd30q.png"],
     }
   ];
 
