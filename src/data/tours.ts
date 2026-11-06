@@ -10,7 +10,7 @@ export const TOURS: Tour[] = [
     destination: 'Addis Ababa',
     duration: '1 Day',
     daysCount: 1,
-    category: 'Day Trips' as any, // CHANGED TO Day Trips
+    category: 'City Tour',
     difficulty: 'Easy',
     startLocation: 'Addis Ababa',
     endLocation: 'Addis Ababa',

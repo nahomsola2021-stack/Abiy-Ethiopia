@@ -12,7 +12,8 @@ export type TourCategory =
   | 'Cultural Journeys'
   | 'Historical Discoveries'
   | 'Nature and Adventure'
-  | 'City Tours'
+  | 'City Tour'
+  | 'Day Trips'
   | 'Wildlife Safaris'
   | 'Birding Tours'
   | 'Specialty Coffee Tours';

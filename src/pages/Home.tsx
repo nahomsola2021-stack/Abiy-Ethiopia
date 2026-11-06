@@ -377,10 +377,8 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, onOpenPlanModal }) => {
         "Personalized transport for individuals, families, and groups"
       ],
       images: [
-        "https://res.cloudinary.com/dw1ohipim/image/upload/v1791473041/vw1ksxsq147g0s2hijwa.jpg",
-        "https://res.cloudinary.com/dw1ohipim/image/upload/v1793735151/gouj0ehphykzpizxhvev.png",
         "https://res.cloudinary.com/dw1ohipim/image/upload/v1793552222/kbweqt0ibh2xee6hd30q.png",
-        "https://res.cloudinary.com/dw1ohipim/image/upload/v1793734977/vblrvpjv55ajwu1g1cdf.png"
+        "https://res.cloudinary.com/dw1ohipim/image/upload/v1793993595/sxrmeusepvwltdsqkz6w.jpg"
       ],
     },
     {
@@ -392,7 +390,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, onOpenPlanModal }) => {
         "Customized transport packages for multi-day trips",
         "Vehicle options for couples, families, and larger groups"
       ],
-      images: ["https://res.cloudinary.com/dw1ohipim/image/upload/v1793735151/gouj0ehphykzpizxhvev.png"],
+      images: ["https://res.cloudinary.com/dw1ohipim/image/upload/v1791473041/vw1ksxsq147g0s2hijwa.jpg"],
     }
   ];
 

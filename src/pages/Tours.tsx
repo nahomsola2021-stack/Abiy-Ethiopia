@@ -16,6 +16,7 @@ const TOUR_CATEGORIES = [
   'Nature and Adventure',
   'Wildlife Safaris',
   'Day Trips',
+  'City Tour',
   'Birding Tours',
   'Specialty Coffee Tours'
 ];
@@ -102,7 +103,8 @@ export const Tours: React.FC<ToursProps> = ({ onNavigate, onOpenPlanModal, initi
     let mappedCategory = initialCategory;
     if (initialCategory === 'Ethiopian Special Tours') mappedCategory = 'Completed Ethiopia Journey';
     if (initialCategory === 'Nature Escapes' || initialCategory === 'Adventure Trails') mappedCategory = 'Nature and Adventure';
-    if (initialCategory.toLowerCase() === 'day trips' || initialCategory === 'City Tours') mappedCategory = 'Day Trips';
+    if (initialCategory.toLowerCase() === 'day trips') mappedCategory = 'Day Trips';
+    if (initialCategory === 'City Tours') mappedCategory = 'City Tour';
     
     if (TOUR_CATEGORIES.includes(mappedCategory)) {
       setActiveMajorCategory(mappedCategory);
@@ -381,7 +383,7 @@ export const Tours: React.FC<ToursProps> = ({ onNavigate, onOpenPlanModal, initi
       </section>
 
       {/* ---------- CLOSING CTA (WITH SEO KEYWORDS) ---------- */}
-      <section className="relative overflow-hidden bg-[#94220a] py-20 md:py-28">
+      <section className="relative overflow-hidden bg-[#94220a] py-10 md:py-14">
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0"
@@ -397,17 +399,17 @@ export const Tours: React.FC<ToursProps> = ({ onNavigate, onOpenPlanModal, initi
         />
 
         <motion.div initial={{ opacity: 0, y: 28 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.9 }}
-          className="mx-auto max-w-4xl px-6 text-center relative z-10">
-          <span className="font-['Montserrat',_sans-serif] text-[10px] tracking-[0.25em] text-[#E8BD5A] uppercase font-bold block mb-4 drop-shadow-md">
+          className="mx-auto max-w-3xl px-6 text-center relative z-10">
+          <span className="font-['Montserrat',_sans-serif] text-[10px] tracking-[0.25em] text-[#E8BD5A] uppercase font-bold block mb-3 drop-shadow-md">
             Tailor-Made Excellence
           </span>
-          <h2 className="font-display text-4xl leading-[0.98] text-[#FFF9F2] drop-shadow-xl md:text-6xl lg:text-7xl">
+          <h2 className="font-display text-3xl leading-tight text-[#FFF9F2] drop-shadow-xl md:text-4xl lg:text-5xl">
             Want to see specific <span className="italic text-[#E8BD5A]">Ethiopia tourist attractions</span>?
           </h2>
-          <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-[#FFF9F2] drop-shadow-md font-light md:text-lg">
+          <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-[#FFF9F2] drop-shadow-md font-light md:text-base">
             If a standard brochure isn't enough, we adjust days, pacing, lodges and routes so you can explore the <strong className="font-medium text-white">places to visit in Ethiopia</strong> exactly how you want. Perfect for solo travelers, couples, families, and private groups.
           </p>
-          <div className="mt-9">
+          <div className="mt-6">
             <PremiumButton
               className="shadow-[0_0_40px_rgba(217,164,65,0.25)] transition-shadow duration-500 hover:shadow-[0_0_60px_rgba(217,164,65,0.45)] ring-1 ring-white/10"
               onClick={() => onOpenPlanModal()}
