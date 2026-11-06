@@ -133,7 +133,7 @@ export const About: React.FC<AboutProps> = ({ onNavigate, onOpenPlanModal }) => 
             <div className="absolute inset-0 border-2 border-[#D8BFA4] rounded-sm transform translate-x-6 translate-y-6 z-0" />
             <div className="relative z-10 overflow-hidden rounded-sm shadow-[0_20px_50px_rgba(36,22,19,.15)] bg-[#241613]">
               <img 
-                src="https://res.cloudinary.com/dw1ohipim/image/upload/v1789400586/k26ppfj629je6synlhxt.jpg" 
+                src="https://res.cloudinary.com/dw1ohipim/image/upload/v1793993164/ohjexxdmxwwfqof0jchi.jpg"
                 className="w-full aspect-[4/5] object-cover object-[center_65%] hover:scale-105 transition-transform duration-[2000ms] ease-out opacity-90"
                 alt="Ethiopian Landscape" 
               />
