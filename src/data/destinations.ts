@@ -623,10 +623,11 @@ export const DESTINATIONS: Destination[] = [
     name: 'Genna (Ethiopian Christmas)',
     tagline: 'A Memorable Journey into Living History and Spiritual Traditions',
     region: 'Ethiopia (Events and Ceremonies)',
-    heroImage: '/images/SEOon_pexels-christian-alemu-127251395-28645144.jpg',
+    heroImage: 'https://res.cloudinary.com/dw1ohipim/image/upload/v1793996513/ikhlxxnxafsohho6wm7f.jpg',
     galleryImages: [
-      'https://res.cloudinary.com/dw1ohipim/image/upload/v1789393454/cz3oknarzl1gjgrmdb1y.jpg',
-      'https://res.cloudinary.com/dw1ohipim/image/upload/v1789393449/krvsczwx9eylfmvtcikq.jpg'
+      'https://res.cloudinary.com/dw1ohipim/image/upload/v1793996513/ikhlxxnxafsohho6wm7f.jpg',
+      'https://res.cloudinary.com/dw1ohipim/image/upload/v1793996553/tyo9amd5u30xpnyucxad.jpg',
+      'https://res.cloudinary.com/dw1ohipim/image/upload/v1793996617/cveesfyju2nlfr3tzchi.jpg'
     ],
     shortDescription: 'Ethiopian Christmas, known as Genna, is celebrated every year on January 7. Lalibela is one of the best places to experience this special holiday alongside thousands of pilgrims.',
     fullOverview: 'The celebration begins on Christmas Eve, when people gather at the famous rock-hewn churches for overnight prayers, traditional songs, and religious ceremonies. Visitors can see priests in colorful robes, pilgrims dressed in traditional white cotton clothes, and candles lighting up the night. Christmas in Lalibela offers a memorable opportunity to experience Ethiopia’s living history, rich culture, and strong spiritual traditions.',

@@ -27,6 +27,7 @@ export const DestinationDetail: React.FC<DestinationDetailProps> = ({ slug, onNa
   const heroRef = useRef<HTMLElement>(null);
   const reduce = useReducedMotion();
   const destination = DESTINATIONS.find((d) => d.slug === slug) || DESTINATIONS[0];
+  const isGenna = destination.slug === 'genna-ethiopian-christmas-lalibela';
   const matchedTours = TOURS.filter((t) => destination.recommendedTourSlugs.includes(t.slug));
 
   const { scrollYProgress } = useScroll({ target: heroRef, offset: ['start start', 'end start'] });
@@ -64,8 +65,8 @@ export const DestinationDetail: React.FC<DestinationDetailProps> = ({ slug, onNa
 
       {/* ---------- MAIN ---------- */}
       <div className="mx-auto max-w-[90rem] px-6 py-16">
-        <div className="grid grid-cols-1 gap-16 lg:grid-cols-12 lg:gap-20">
-          <div className="space-y-28 lg:col-span-8">
+        <div className={`grid grid-cols-1 gap-16 lg:grid-cols-12 ${isGenna ? 'lg:gap-12' : 'lg:gap-20'}`}>
+          <div className={`space-y-28 ${isGenna ? 'lg:col-span-9' : 'lg:col-span-8'}`}>
             {/* Overview (WITH SEO) */}
             <motion.div {...reveal}>
               <h2 className="font-display text-4xl leading-tight md:text-6xl">Discover {destination.name}</h2>
@@ -76,6 +77,34 @@ export const DestinationDetail: React.FC<DestinationDetailProps> = ({ slug, onNa
                 {destination.fullOverview}
               </p>
             </motion.div>
+
+            {isGenna && (
+              <motion.section {...reveal} aria-labelledby="genna-gallery-title" className="lg:flex lg:min-h-[100svh] lg:flex-col lg:justify-center">
+                <div className="mb-7 flex flex-col gap-3 border-b border-[#D8BFA4] pb-5 sm:flex-row sm:items-end sm:justify-between">
+                  <div>
+                    <p className="mb-2 text-xs font-bold uppercase tracking-[0.24em] text-[#A94332]">A celebration of faith</p>
+                    <h3 id="genna-gallery-title" className="font-display text-3xl md:text-4xl">Moments of Genna</h3>
+                  </div>
+                  <p className="max-w-sm text-sm leading-relaxed text-[#5A3D34]">A glimpse of the warmth, devotion, and living traditions of Christmas in Lalibela.</p>
+                </div>
+                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-[1.55fr_1fr]">
+                  {destination.galleryImages.slice(0, 3).map((image, index) => (
+                    <figure
+                      key={image}
+                      className={`group relative overflow-hidden rounded-sm bg-[#241613] shadow-[0_12px_30px_rgba(36,22,19,.16)] ${index === 0 ? 'sm:col-span-2 lg:col-span-1 lg:row-span-2' : ''}`}
+                    >
+                      <img
+                        src={image}
+                        alt={`Genna celebration in Lalibela, photo ${index + 1}`}
+                        loading="lazy"
+                        className={`w-full object-cover transition-transform duration-700 group-hover:scale-105 ${index === 0 ? 'aspect-[16/8] max-h-[34rem] lg:h-[68svh] lg:max-h-none lg:aspect-auto' : 'aspect-[4/3] lg:h-[33svh] lg:aspect-auto'}`}
+                      />
+                      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#241613]/35 via-transparent to-transparent opacity-70 transition-opacity group-hover:opacity-100" />
+                    </figure>
+                  ))}
+                </div>
+              </motion.section>
+            )}
 
             {/* Why visit */}
             <motion.div {...reveal} className="border-y border-[#D8BFA4] py-12">
@@ -127,7 +156,7 @@ export const DestinationDetail: React.FC<DestinationDetailProps> = ({ slug, onNa
           </div>
 
           {/* ---------- STICKY SIDEBAR (WITH SEO) ---------- */}
-          <aside className="lg:col-span-4">
+          <aside className={isGenna ? 'lg:col-span-3' : 'lg:col-span-4'}>
             <div className="space-y-6 lg:sticky lg:top-28">
               <div className="rounded-sm bg-[#241613] p-9 text-[#F7EBDD] shadow-[0_30px_60px_rgba(36,22,19,.35)] md:p-10">
                 <h3 className="font-display text-4xl leading-tight text-[#FFF9F2]">Journey to {destination.name}</h3>
