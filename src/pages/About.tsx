@@ -215,7 +215,7 @@ export const About: React.FC<AboutProps> = ({ onNavigate, onOpenPlanModal }) => 
               <div>
                 <p className="font-bold text-2xl text-[#241613] font-['Goudy_Serial',_'Goudy_Bookletter_1911',_serif]"><span className="font-extrabold">Abiy Sitotie</span></p>
                 <p className="font-['Montserrat',_sans-serif] text-[10px] tracking-[0.2em] text-[#A94332] uppercase font-bold mt-1.5">
-                  Expert Travel & Transport Professionals
+                  Travel Expert CEO & Managing Director
                 </p>
               </div>
             </div>

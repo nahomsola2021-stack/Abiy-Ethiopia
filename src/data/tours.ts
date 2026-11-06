@@ -857,9 +857,9 @@ export const TOURS: Tour[] = [
     endLocation: 'Addis Ababa',
     transportation: '4WD or Tourist Vehicle',
     bestMonths: 'Year-round',
-    heroImage: 'https://res.cloudinary.com/dw1ohipim/image/upload/v1791473038/i1bndbepjq2hwbkiu3fo.jpg',
+    heroImage: 'https://res.cloudinary.com/dw1ohipim/image/upload/v1791473042/m9niy1w7xfpclmkxb4hf.jpg',
     galleryImages: [
-      'https://res.cloudinary.com/dw1ohipim/image/upload/v1790361826/xt1a082vzyouqhknh5xz.jpg',
+      'https://res.cloudinary.com/dw1ohipim/image/upload/v1791473042/m9niy1w7xfpclmkxb4hf.jpg',
       'https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&q=80&w=1200'
     ],
     shortDescription: 'Discover Awash National Park, Dire Dawa, and the historic walled city of Harar in one immersive cultural and wildlife adventure.',

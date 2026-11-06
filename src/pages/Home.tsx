@@ -65,7 +65,7 @@ const HERO_SLIDES = [
   { src: '/images/IMG_8007.JPG', destId: 7, destination: 'Addis Ababa', caption: 'Cultural Capital, Museums & Highland Coffee Tradition' },
   { src: '/images/monkey-8338310_1280.png', destId: 5, destination: 'Simein mountain', caption: 'UNESCO World Heritage Highland Peaks' },
   { src: 'https://res.cloudinary.com/dw1ohipim/image/upload/v1791473043/uymjwklcqm5flyi2dhi7.jpg', destId: 3, destination: 'Danakil', caption: 'Erta Ale Active Volcano & Afar Desert' },
-  { src: 'https://res.cloudinary.com/dw1ohipim/image/upload/v1791473036/rejjoibmqvcji3fg9kjo.jpg', destId: 4, destination: 'Omo Valley', caption: 'Traditional Villages of Southern Ethiopia' },
+  { src: 'https://res.cloudinary.com/dw1ohipim/image/upload/v1789690142/lcupyjfbrdjbytckaa7p.webp', destId: 4, destination: 'Omo Valley', caption: 'Traditional Villages of Southern Ethiopia' },
 ];
 
 const QUOTE_PARTICLES = Array.from({ length: 20 }, (_, i) => ({
