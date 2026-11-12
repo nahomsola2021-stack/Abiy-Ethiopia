@@ -127,7 +127,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentView, onNavigate, onOpenP
               aria-label="Abiy Ethiopia Tours home"
               className={`group cursor-pointer transition-all duration-300 ${overHero ? 'pointer-events-none -translate-x-4 opacity-0' : 'translate-x-0 opacity-100'}`}
             >
-              <Logo className="h-10 w-auto scale-110 object-contain brightness-0 invert transition-transform duration-300 group-hover:scale-110 sm:h-12 lg:h-14" />
+              <Logo variant="light" className="h-10 w-auto scale-110 object-contain transition-transform duration-300 group-hover:scale-110 sm:h-12 lg:h-14" />
             </button>
           </div>
 
@@ -240,7 +240,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentView, onNavigate, onOpenP
           >
             {/* Top Logo and Close Button (No Shrink) */}
             <div className="flex shrink-0 items-center justify-between border-b border-white/10 px-6 py-5">
-              <Logo className="h-14 w-auto scale-110 object-contain brightness-0 invert sm:h-16" />
+              <Logo variant="light" className="h-14 w-auto scale-110 object-contain sm:h-16" />
               <button
                 onClick={() => setMobileMenuOpen(false)}
                 aria-label="Close menu"

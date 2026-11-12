@@ -5,15 +5,21 @@ interface LogoProps {
   variant?: 'light' | 'dark' | 'color';
 }
 
-export const Logo: React.FC<LogoProps> = ({ 
-  // Given a responsive default size so it works properly everywhere if no class is passed
-  className = 'h-12 md:h-16 lg:h-20 w-auto object-contain' 
+export const Logo: React.FC<LogoProps> = ({
+  className = 'h-12 md:h-16 lg:h-20 w-auto object-contain',
+  variant = 'color',
 }) => {
+  const variantClassName = {
+    light: 'brightness-0 invert',
+    dark: 'brightness-0',
+    color: '',
+  }[variant];
+
   return (
-    <img 
-      src="https://res.cloudinary.com/dw1ohipim/image/upload/v1791479927/rozez2grmcld6b3dovps.png" 
-      alt="Abiy One Ethiopia Tours" 
-      className={className} 
+    <img
+      src="/images/abiy-ethiopia-tours-logo.png"
+      alt="Abiy Ethiopia Tours"
+      className={`${className} ${variantClassName}`}
     />
   );
 };
