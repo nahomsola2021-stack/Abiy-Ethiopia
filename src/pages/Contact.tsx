@@ -24,6 +24,15 @@ const TRIPADVISOR_URL =
   'https://www.tripadvisor.com/Attraction_Review-g293791-d15619681-Reviews-Abiy_Ethiopia_Tours-Addis_Ababa.html';
 const SAFARIBOOKINGS_URL = 'https://www.safaribookings.com/p7818';
 const GOOGLE_REVIEW_URL = 'https://maps.app.goo.gl/Uus3kjnG9CDJJMVN9';
+const WEB3FORMS_ACCESS_KEY = '03b8521a-1321-41c2-ad5f-bcfa34641f5a';
+
+interface Web3FormsResponse {
+  success?: boolean;
+  message?: string;
+}
+
+const isWeb3FormsResponse = (value: unknown): value is Web3FormsResponse =>
+  typeof value === 'object' && value !== null && 'success' in value;
 
 // --- EXTRA-LARGE BRAND & SOCIAL SVG ICONS ---
 const WhatsAppIcon: React.FC<{ className?: string }> = ({ className = 'h-14 w-14' }) => (
@@ -185,17 +194,50 @@ export const Contact: React.FC<ContactProps> = ({ onNavigate }) => {
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', tour: '', message: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState('');
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate API call
-    setTimeout(() => {
-      setIsSubmitting(false);
+    setSubmitError('');
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          subject: `New website inquiry from ${formData.name}`,
+          from_name: 'Abiy Ethiopia Tours Website',
+          ...formData,
+          botcheck: '',
+        }),
+      });
+      const result: unknown = await response.json();
+
+      if (!isWeb3FormsResponse(result) || !response.ok || result.success !== true) {
+        const message = isWeb3FormsResponse(result) && result.message
+          ? result.message
+          : 'We could not send your inquiry. Please try again.';
+        setSubmitError(message);
+        return;
+      }
+
       setFormSubmitted(true);
       setFormData({ name: '', email: '', phone: '', tour: '', message: '' });
-    }, 1500);
+    } catch (error) {
+      setSubmitError(
+        error instanceof Error
+          ? `Unable to send your inquiry: ${error.message}`
+          : 'Unable to send your inquiry. Please check your connection and try again.',
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const toggleFaq = (index: number) => {
@@ -391,17 +433,20 @@ export const Contact: React.FC<ContactProps> = ({ onNavigate }) => {
                   <motion.div key="form" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
                     <h2 className="font-display text-4xl md:text-5xl">Send a message</h2>
                     <form onSubmit={handleSubmit} className="mt-10 space-y-8">
+                      <input type="hidden" name="access_key" value={WEB3FORMS_ACCESS_KEY} />
+                      <input type="hidden" name="subject" value="New website contact inquiry" />
+                      <input type="checkbox" name="botcheck" className="hidden" tabIndex={-1} aria-hidden="true" />
                       <div className="grid gap-8 md:grid-cols-2">
                         <div><label htmlFor="c-name" className={labelCls}>Full name</label>
-                          <input id="c-name" required type="text" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} placeholder="e.g. David Miller" className={fieldCls} /></div>
+                          <input id="c-name" name="name" required type="text" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} placeholder="e.g. David Miller" className={fieldCls} /></div>
                         <div><label htmlFor="c-email" className={labelCls}>Email address</label>
-                          <input id="c-email" required type="email" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} placeholder="your@email.com" className={fieldCls} /></div>
+                          <input id="c-email" name="email" required type="email" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} placeholder="your@email.com" className={fieldCls} /></div>
                       </div>
                       <div className="grid gap-8 md:grid-cols-2">
                         <div><label htmlFor="c-phone" className={labelCls}>Phone (optional)</label>
-                          <input id="c-phone" type="tel" value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} placeholder="+1 234 567 890" className={fieldCls} /></div>
+                          <input id="c-phone" name="phone" type="tel" value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} placeholder="+1 234 567 890" className={fieldCls} /></div>
                         <div className="relative"><label htmlFor="c-tour" className={labelCls}>Area of interest</label>
-                          <select id="c-tour" value={formData.tour} onChange={(e) => setFormData({ ...formData, tour: e.target.value })} className={`${fieldCls} cursor-pointer appearance-none`}>
+                          <select id="c-tour" name="tour" value={formData.tour} onChange={(e) => setFormData({ ...formData, tour: e.target.value })} className={`${fieldCls} cursor-pointer appearance-none`}>
                             <option value="">Select an interest...</option>
                             <option value="Historic Route">Historic Route</option>
                             <option value="Danakil Depression">Danakil Depression</option>
@@ -412,10 +457,11 @@ export const Contact: React.FC<ContactProps> = ({ onNavigate }) => {
                           <ChevronDown size={16} className="pointer-events-none absolute bottom-4 right-0 text-[#33201A]/50" /></div>
                       </div>
                       <div><label htmlFor="c-msg" className={labelCls}>Your message</label>
-                        <textarea id="c-msg" required rows={4} value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} placeholder="Tell us about your travel plans..." className={`${fieldCls} resize-none`} /></div>
+                        <textarea id="c-msg" name="message" required rows={4} value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} placeholder="Tell us about your travel plans..." className={`${fieldCls} resize-none`} /></div>
                       <PremiumButton type="submit" arrow={false} disabled={isSubmitting} className="w-full disabled:cursor-not-allowed disabled:opacity-60">
                         {isSubmitting ? 'Sending...' : (<><Send size={17} /> Send inquiry</>)}
                       </PremiumButton>
+                      {submitError && <p role="alert" className="text-sm text-red-700">{submitError}</p>}
                     </form>
                   </motion.div>
                 )}
