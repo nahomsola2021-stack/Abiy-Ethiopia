@@ -46,9 +46,9 @@ export interface HomeProps {
 const HERO_DESTINATIONS = [
   { id: 0, name: 'Lalibela', region: 'Sacred Rock Churches', slideIndex: 0 },
   { id: 1, name: 'Axum', region: 'Ancient Aksumite Empire', slideIndex: 1 },
-  { id: 2, name: 'Gondar', region: 'Royal Imperial Castles', slideIndex: 2 },
-  { id: 3, name: 'Danakil', region: 'Afar Region', slideIndex: 3 },
-  { id: 4, name: 'Omo Valley', region: 'Southern Heartland', slideIndex: 4 },
+  { id: 2, name: 'Gondar', region: 'Royal Imperial Castles', slideIndex: 3 },
+  { id: 3, name: 'Danakil', region: 'Afar Region', slideIndex: 4 },
+  { id: 4, name: 'Omo Valley', region: 'Southern Heartland', slideIndex: 2 },
   { id: 5, name: 'Simein mountain', region: 'Northern Highlands', slideIndex: 5 },
   { id: 6, name: 'Bale mountain', region: 'Afro-Alpine Wilderness', slideIndex: 6 },
   { id: 7, name: 'Addis Ababa', region: 'Vibrant Capital & Culture', slideIndex: 7 },
@@ -57,6 +57,7 @@ const HERO_DESTINATIONS = [
 const HERO_SLIDES = [
   { src: 'https://res.cloudinary.com/dw1ohipim/image/upload/v1787132831/bkck551eiil1tnfsdvkn.webp', destId: 0, destination: 'Lalibela', caption: 'Ancient 12th-Century Rock-Hewn Churches' },
   { src: '/images/57948950.jpg', destId: 1, destination: 'Axum', caption: 'Ancient Obelisks & Cradle of Aksumite Civilization' },
+  { src: 'https://res.cloudinary.com/dw1ohipim/image/upload/v1789690142/lcupyjfbrdjbytckaa7p.webp', destId: 4, destination: 'Omo Valley', caption: 'Traditional Villages of Southern Ethiopia' },
   { src: 'https://res.cloudinary.com/dw1ohipim/image/upload/v1789393457/zzfjfc2hfezgwd2dmrfo.jpg', destId: 2, destination: 'Gondar', caption: 'Fasil Ghebbi Royal Enclosure & 17th-Century Castles' },
   { src: 'https://res.cloudinary.com/dw1ohipim/image/upload/v1791473050/gnxfhpuqgsqdlax2a68f.jpg', destId: 3, destination: 'Danakil', caption: 'Dallol Geothermal Springs & Salt Flats' },
   { src: 'https://res.cloudinary.com/dw1ohipim/image/upload/v1791473835/ey3lqy03kwiwtscn38gq.jpg', destId: 4, destination: 'Omo Valley', caption: 'Indigenous Tribes & Living Cultural Heritage' },
@@ -65,7 +66,6 @@ const HERO_SLIDES = [
   { src: '/images/IMG_8007.JPG', destId: 7, destination: 'Addis Ababa', caption: 'Cultural Capital, Museums & Highland Coffee Tradition' },
   { src: '/images/monkey-8338310_1280.png', destId: 5, destination: 'Simein mountain', caption: 'UNESCO World Heritage Highland Peaks' },
   { src: 'https://res.cloudinary.com/dw1ohipim/image/upload/v1791473043/uymjwklcqm5flyi2dhi7.jpg', destId: 3, destination: 'Danakil', caption: 'Erta Ale Active Volcano & Afar Desert' },
-  { src: 'https://res.cloudinary.com/dw1ohipim/image/upload/v1789690142/lcupyjfbrdjbytckaa7p.webp', destId: 4, destination: 'Omo Valley', caption: 'Traditional Villages of Southern Ethiopia' },
 ];
 
 const QUOTE_PARTICLES = Array.from({ length: 20 }, (_, i) => ({
