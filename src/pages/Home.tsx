@@ -428,8 +428,8 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, onOpenPlanModal }) => {
           <div className="absolute -bottom-px -right-px h-5 w-5 border-b-2 border-r-2 border-[#E8BD5A]/60" />
         </div>
 
-        <div className="absolute left-6 top-6 z-30 md:left-12 md:top-10">
-          <Logo className="h-28 w-auto object-contain drop-shadow-[0_12px_28px_rgba(0,0,0,.7)] sm:h-32 md:h-36" />
+        <div className="absolute inset-x-0 top-0 z-30 mx-auto max-w-[95rem] px-6 pt-6">
+          <Logo className="h-20 w-auto object-contain drop-shadow-[0_12px_28px_rgba(0,0,0,.7)] sm:h-24 md:h-28" />
         </div>
 
         <button onClick={prevHeroSlide} aria-label="Previous image" className="absolute left-4 md:left-10 top-1/2 -translate-y-1/2 z-40 group flex h-14 w-14 md:h-20 md:w-20 cursor-pointer items-center justify-center rounded-full border border-white/20 bg-[#1A100E]/45 backdrop-blur-xl ring-1 ring-white/10 transition-all duration-500 hover:bg-[#9e3524] hover:scale-110 hover:border-[#E8BD5A]/70 shadow-[0_10px_36px_rgba(0,0,0,0.75)] text-white">
