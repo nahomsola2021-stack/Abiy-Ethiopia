@@ -428,7 +428,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, onOpenPlanModal }) => {
           <div className="absolute -bottom-px -right-px h-5 w-5 border-b-2 border-r-2 border-[#E8BD5A]/60" />
         </div>
 
-        <div className="absolute inset-x-0 top-0 z-30 mx-auto max-w-[95rem] px-6 pt-6">
+        <div className="absolute inset-x-0 top-0 z-30 mx-auto flex h-24 max-w-[95rem] items-center px-6">
           <Logo className="h-20 w-auto object-contain drop-shadow-[0_12px_28px_rgba(0,0,0,.7)] sm:h-24 md:h-28" />
         </div>
 
