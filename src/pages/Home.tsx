@@ -421,7 +421,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, onOpenPlanModal }) => {
           <div className="pointer-events-none absolute left-1/2 top-[42%] h-[28rem] w-[48rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#E8BD5A]/15 blur-[130px]" />
         </motion.div>
         
-        <div className="pointer-events-none absolute inset-4 md:inset-7 z-10 rounded-sm border border-white/10">
+        <div className="pointer-events-none absolute inset-4 md:inset-7 z-10 rounded-sm">
           <div className="absolute -left-px -top-px h-5 w-5 border-l-2 border-t-2 border-[#E8BD5A]/60" />
           <div className="absolute -right-px -top-px h-5 w-5 border-r-2 border-t-2 border-[#E8BD5A]/60" />
           <div className="absolute -bottom-px -left-px h-5 w-5 border-b-2 border-l-2 border-[#E8BD5A]/60" />
