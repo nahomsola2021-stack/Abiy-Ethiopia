@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { HelmetProvider } from 'react-helmet-async';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { PageView } from './types';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
@@ -14,9 +14,73 @@ import { TourDetail } from './pages/TourDetail';
 import { About } from './pages/About';
 import { Contact } from './pages/Contact';
 
+interface CurrentRoute {
+  view: PageView;
+  slug: string;
+}
+
+const getCurrentRoute = (location: Location): CurrentRoute => {
+  if (location.hash) {
+    const [rawView, ...slugParts] = decodeURIComponent(location.hash.slice(1)).split('/');
+    const validViews: PageView[] = [
+      'home',
+      'destinations',
+      'tours',
+      'about',
+      'contact',
+      'tour-detail',
+      'destination-detail',
+    ];
+
+    return {
+      view: validViews.includes(rawView as PageView) ? (rawView as PageView) : 'home',
+      slug: slugParts.join('/'),
+    };
+  }
+
+  const pathParts = location.pathname.split('/').filter(Boolean).map(decodeURIComponent);
+  const category = new URLSearchParams(location.search).get('category') || '';
+
+  if (pathParts.length === 0) return { view: 'home', slug: '' };
+  if (pathParts[0] === 'destinations') {
+    return pathParts.length > 1
+      ? { view: 'destination-detail', slug: pathParts.slice(1).join('/') }
+      : { view: 'destinations', slug: category };
+  }
+  if (pathParts[0] === 'tours') {
+    return pathParts.length > 1
+      ? { view: 'tour-detail', slug: pathParts.slice(1).join('/') }
+      : { view: 'tours', slug: category };
+  }
+  if (pathParts.length === 1 && (pathParts[0] === 'about' || pathParts[0] === 'contact')) {
+    return { view: pathParts[0], slug: '' };
+  }
+
+  return { view: 'home', slug: '' };
+};
+
+const getRouteUrl = (view: PageView, slug: string) => {
+  if (view === 'destination-detail') return `/destinations/${encodeURIComponent(slug)}`;
+  if (view === 'tour-detail') return `/tours/${encodeURIComponent(slug)}`;
+
+  const paths: Record<Exclude<PageView, 'destination-detail' | 'tour-detail'>, string> = {
+    home: '/',
+    destinations: '/destinations',
+    tours: '/tours',
+    about: '/about',
+    contact: '/contact',
+  };
+  const path = paths[view];
+
+  return slug && (view === 'destinations' || view === 'tours')
+    ? `${path}?category=${encodeURIComponent(slug)}`
+    : path;
+};
+
 export default function App() {
-  const [currentView, setCurrentView] = useState<PageView>('home');
-  const [currentSlug, setCurrentSlug] = useState<string>('');
+  const [initialRoute] = useState(() => getCurrentRoute(window.location));
+  const [currentView, setCurrentView] = useState<PageView>(initialRoute.view);
+  const [currentSlug, setCurrentSlug] = useState<string>(initialRoute.slug);
   const [isPlanModalOpen, setIsPlanModalOpen] = useState<boolean>(false);
   const [planModalPreset, setPlanModalPreset] = useState<string>('');
 
@@ -40,20 +104,7 @@ export default function App() {
   // --- NATIVE SWIPE-BACK LOGIC ---
   useEffect(() => {
     const handlePopState = () => {
-      const rawHash = window.location.hash.replace('#', '');
-      
-      if (!rawHash) {
-        setCurrentView('home');
-        setCurrentSlug('');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-        return;
-      }
-
-      // decodeURIComponent fixes the %20 space issue from URLs
-      const hash = decodeURIComponent(rawHash);
-      const parts = hash.split('/');
-      const view = parts[0] as PageView;
-      const slug = parts.slice(1).join('/');
+      const { view, slug } = getCurrentRoute(window.location);
 
       setCurrentView(view);
       setCurrentSlug(slug);
@@ -63,12 +114,6 @@ export default function App() {
     };
 
     window.addEventListener('popstate', handlePopState);
-    
-    if (!window.location.hash) {
-      window.history.replaceState(null, '', '#home');
-    } else {
-      handlePopState();
-    }
 
     return () => window.removeEventListener('popstate', handlePopState);
   }, []);
@@ -82,9 +127,8 @@ export default function App() {
     setCurrentSlug(slug);
     setIsPlanModalOpen(false);
     
-    // Silently update URL (encoding the spaces)
-    const url = slug ? `#${view}/${encodeURIComponent(slug)}` : `#${view}`;
-    if (window.location.hash !== url) {
+    const url = getRouteUrl(view, slug);
+    if (`${window.location.pathname}${window.location.search}${window.location.hash}` !== url) {
       window.history.pushState(null, '', url);
     }
     
@@ -105,6 +149,16 @@ export default function App() {
   return (
     <HelmetProvider>
       <div className="min-h-screen flex flex-col bg-[#F7EBDD] text-[#241613] font-sans antialiased selection:bg-[#D9A441] selection:text-[#241613]">
+        <Helmet>
+          <link
+            rel="canonical"
+            href={`https://abiyethiopiatours.com${getRouteUrl(currentView, currentSlug).split('?')[0]}`}
+          />
+          <meta
+            property="og:url"
+            content={`https://abiyethiopiatours.com${getRouteUrl(currentView, currentSlug).split('?')[0]}`}
+          />
+        </Helmet>
         <Navbar currentView={currentView} onNavigate={handleNavigate} onOpenPlanModal={handleOpenPlanModal} />
 
         <main className="flex-1 w-full">
